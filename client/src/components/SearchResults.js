@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 import axios from "axios";
 
 class SearchResults extends React.Component {
@@ -17,7 +18,8 @@ class SearchResults extends React.Component {
         axios
             .get("http://localhost:5000/api/players")
             .then(res => {
-                console.log("Success", res)
+                console.log("Success", res.data)
+                // res.data
                 this.setState({
                     searchResults: res.data
                 })
@@ -29,10 +31,14 @@ class SearchResults extends React.Component {
     }
 
     // rendering components
+    // Woo! its working
     render() {
         console.log("rendering...")
         return (
             <div>
+                {this.state.searchResults.map((player, id) => {
+                    return <Card key={id} searchResults={player} />
+                })}
             </div>
         );
     }
