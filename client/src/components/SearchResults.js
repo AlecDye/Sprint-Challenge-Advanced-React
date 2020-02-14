@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import axios from "axios";
+import "./SearchResults.css";
 
 class SearchResults extends React.Component {
     // initalizing state
@@ -35,7 +36,7 @@ class SearchResults extends React.Component {
     render() {
         console.log("rendering...")
         return (
-            <div>
+            <div className="card-wrapper">
                 {this.state.searchResults.map((player, id) => {
                     return <Card key={id} searchResults={player} />
                 })}
