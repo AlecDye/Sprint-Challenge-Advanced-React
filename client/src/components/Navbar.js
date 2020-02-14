@@ -19,6 +19,7 @@ const Navbar = () => {
                 <div
                     onClick={toggleMode}
                     className={theme ? 'toggle toggled' : 'toggle'}
+                    data-testid="toggle"
                 >
                 </div>
             </div>
