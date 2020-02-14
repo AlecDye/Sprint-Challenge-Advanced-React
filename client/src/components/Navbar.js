@@ -10,7 +10,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="nav-bar">
+        <nav className="navbar">
             <div>
                 <h1>Women's WorldCup Search Trends</h1>
                 <p>June 2019 - July 2019</p>
