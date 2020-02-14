@@ -9,10 +9,13 @@ test('App renders without crashing', () => {
 });
 
 test('Header is rendering', () => {
+  // arrange
   const { getByText } = render(<Navbar />)
 
+  // act
   const header = getByText(/women's worldcup search trends/i)
 
+  // assert
   expect(header).not.toBeFalsy();
   expect(header).toBeTruthy();
 })
