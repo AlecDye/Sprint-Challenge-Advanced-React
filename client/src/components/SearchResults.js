@@ -1,6 +1,7 @@
 import React from "react";
+import axios from "axios";
 
-class App extends React.Component {
+class SearchResults extends React.Component {
     // initalizing state
     constructor() {
         super();
@@ -13,15 +14,14 @@ class App extends React.Component {
     // fetching API request after render
     componentDidMount() {
         console.log("CDM firing")
-        // google trends API for "Women's World Cup" Jun-July 2019 Worldwide coverage
         axios
             .get("http://localhost:5000/api/players")
             .then(res => {
-                console.log(res)
+                console.log("Success", res)
                 this.setState({
                     searchResults: res.data
                 })
-                console.log("searchResults", res.data)
+                // console.log("searchResults", res.data)
             })
             .catch(err => {
                 console.log("request error", err)
@@ -32,10 +32,10 @@ class App extends React.Component {
     render() {
         console.log("rendering...")
         return (
-            <div className="App">
+            <div>
             </div>
         );
     }
 }
 
-export default App;
+export default SearchResults;

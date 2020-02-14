@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import SearchResults from './components/SearchResults';
 import './App.css';
 
 //* move react component off of App to separate component
@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      {/* Component function */}
+      <SearchResults />
     </div>
   );
 }
