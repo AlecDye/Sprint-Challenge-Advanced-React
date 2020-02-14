@@ -1,9 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import App from './App';
+import Navbar from './components/Navbar';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test('App renders without crashing', () => {
+  render(<App />)
+
 });
+
+test('Header is rendering', () => {
+  // arrange
+  const { getByText } = render(<Navbar />)
+
+  // act
+  const header = getByText(/women's worldcup search trends/i)
+
+  // assert
+  expect(header).not.toBeFalsy();
+  expect(header).toBeTruthy();
+})
